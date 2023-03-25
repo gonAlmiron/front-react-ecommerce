@@ -60,6 +60,8 @@ const Login = (props) =>  {
               <br/>
               <p>No tenes usuario?</p>
               <Link to="/signup">Registrate aquí</Link>
+            <hr/>
+              <Link to="http://localhost:3002/api/auth/google"> Logear con google </Link>
             
             </div>
         </div>
