@@ -4,7 +4,7 @@ import io from 'socket.io-client'
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 //Conexión para escuchar y enviar eventos
-const socket = io('http://localhost:3002' || 'https://api-ecommerce-coder-production.up.railway.app')
+const socket = io('https://api-ecommerce-coder-production.up.railway.app')
 
 
 function ChatDos() {
@@ -16,7 +16,7 @@ function ChatDos() {
   const [messages, setMessages] = useState([])
   const [storedMessages, setStoredMessages] = useState([])
 
-  const url = 'http://localhost:3002/api/chat/' || 'https://api-ecommerce-coder-production.up.railway.app/api/chat'
+  const url = 'https://api-ecommerce-coder-production.up.railway.app/api/chat'
 
   useEffect(() =>{
     const receivedMessage = (message) =>{

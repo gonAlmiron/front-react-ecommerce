@@ -14,7 +14,7 @@ const SignUp = (props) =>  {
       e.preventDefault();
       
       try {
-        await axios.post('http://localhost:3002/api/auth/signup' || 'https://api-ecommerce-coder-production.up.railway.app/api/auth/signup',
+        await axios.post('https://api-ecommerce-coder-production.up.railway.app/api/auth/signup',
         {username, password} 
        
         )} 

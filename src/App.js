@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ChatDos from './components/Chat/Chat';
 import socketIO from 'socket.io-client';
 import Home from './components/Home/Home';
-const socket = socketIO.connect('http://localhost:3002' || 'https://api-ecommerce-coder-production.up.railway.app', {transports: ['websocket']});
+const socket = socketIO.connect('https://api-ecommerce-coder-production.up.railway.app', {transports: ['websocket']});
 
 
 const App = () => {
