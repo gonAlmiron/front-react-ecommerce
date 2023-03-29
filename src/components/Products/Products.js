@@ -1,6 +1,8 @@
-import React, { useEffect } from "react"
-import {useState} from "react"
+import React, { useEffect } from 'react'
+import {useState} from 'react'
 import Table from 'react-bootstrap/Table';
+import NuevoProductoDos from './NuevoProducto';
+import axios from 'axios';
 
 // import { QRCode } from "antd";
 
@@ -13,27 +15,25 @@ const Products =  () => {
 
             fetch('http://localhost:3002/api/products')
             .then((resp) => resp.json())
-            .then((data) => {setProductos(data)})
-    
-            
-            
+            .then((data) => {setProductos(data)})      
     }, [])
     console.log(productos)
 
-    // const url = `http://localhost/3002/api/products/${productos}`
 
-    // const borrarProducto = () => {
-    //   axios.delete(`http://localhost/3002/api/products`)
-  
-
-    // }
-
+    const handleDelete = (productos)=> {
+      try {
+        axios.delete(`http://localhost:3002/api/products/${productos.id}`)
+      } 
+        catch(err) {
+            console.log(err.message)
+            console.log(err.stack)
+      }
+    }
 
   return (
-
       <>
-
-         <Table striped bordered hover variant="dark" className="my-4">
+        <NuevoProductoDos/>
+         <Table striped bordered hover className="my-4">
       <thead>
         <tr>
           <th>Producto</th>
@@ -51,9 +51,9 @@ const Products =  () => {
             <td>{prod.description}</td>
             <td>{prod.price}</td>
             <td>
-            <button className="btn btn-secondary mx-2">Editar</button>
+            <button className="btn btn-secondary mx-2">Comprar</button>
             
-            <button className="btn btn-danger mx-2">Eliminar</button>
+            <button onClick={handleDelete} className="btn btn-danger mx-2">Eliminar</button>
               </td>
             
             {/* <td> <QRCode value={url}/></td> */}
