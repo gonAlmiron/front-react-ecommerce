@@ -21,7 +21,7 @@ const NuevoProductoDos = () => {
     const handleSubmit = async (e) => {
 
       try {
-        await axios.post("http://localhost:3002/api/products",
+        await axios.post('http://localhost:3002/api/products' || 'https://api-ecommerce-coder-production.up.railway.app/api/products',
         {name, description, price}
         )
       } 

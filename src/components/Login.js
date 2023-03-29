@@ -17,7 +17,7 @@ const Login = (props) =>  {
       e.preventDefault();
       localStorage.setItem('username', username);
       try {
-          await axios.post("http://localhost:3002/api/auth/login",
+          await axios.post('http://localhost:3002/api/auth/login' || 'https://api-ecommerce-coder-production.up.railway.app/api/auth/login',
           {username, password} 
         )} 
         catch(err) {
