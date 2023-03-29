@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import {useState} from 'react'
 import Table from 'react-bootstrap/Table';
 import NuevoProductoDos from './NuevoProducto';
-import axios from 'axios';
 
 // import { QRCode } from "antd";
 
@@ -13,22 +12,22 @@ const Products =  () => {
 
     useEffect(() => {
 
-            fetch('http://localhost:3002/api/products')
+            fetch('http://api-ecommerce-coder-production.up.railway.app/api/products')
             .then((resp) => resp.json())
             .then((data) => {setProductos(data)})      
     }, [])
     console.log(productos)
 
 
-    const handleDelete = (productos)=> {
-      try {
-        axios.delete(`http://localhost:3002/api/products/${productos.id}`)
-      } 
-        catch(err) {
-            console.log(err.message)
-            console.log(err.stack)
-      }
-    }
+    // const handleDelete = (productos)=> {
+    //   try {
+    //     axios.delete(`http://localhost:3002/api/products/${productos.id}`)
+    //   } 
+    //     catch(err) {
+    //         console.log(err.message)
+    //         console.log(err.stack)
+    //   }
+    // }
 
   return (
       <>
@@ -53,7 +52,7 @@ const Products =  () => {
             <td>
             <button className="btn btn-secondary mx-2">Comprar</button>
             
-            <button onClick={handleDelete} className="btn btn-danger mx-2">Eliminar</button>
+            {/* <button onClick={handleDelete} className="btn btn-danger mx-2">Eliminar</button> */}
               </td>
             
             {/* <td> <QRCode value={url}/></td> */}
