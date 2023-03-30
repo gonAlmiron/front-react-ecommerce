@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import {useState} from 'react'
 import Table from 'react-bootstrap/Table';
 import NuevoProductoDos from './NuevoProducto';
+import axios from 'axios';
 
 // import { QRCode } from "antd";
 
@@ -19,6 +20,12 @@ const Products =  () => {
     console.log(productos)
 
 
+    const deleteProduct = (productId) => {
+
+      axios.delete(`https://api-ecommerce-coder-production.up.railway.app/api/products/${productId}`)
+      setProductos(productos.filter(prod => prod.id !== productId));
+
+    }
     // const handleDelete = (productos)=> {
     //   try {
     //     axios.delete(`http://localhost:3002/api/products/${productos.id}`)
@@ -52,7 +59,7 @@ const Products =  () => {
             <td>
             <button className="btn btn-secondary mx-2">Comprar</button>
             
-            {/* <button onClick={handleDelete} className="btn btn-danger mx-2">Eliminar</button> */}
+            <button onClick={() => {deleteProduct(prod._id)}} className="btn btn-danger mx-2">Eliminar</button>
               </td>
             
             {/* <td> <QRCode value={url}/></td> */}
