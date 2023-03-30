@@ -12,7 +12,7 @@ const Products =  () => {
 
     useEffect(() => {
 
-            fetch('http://api-ecommerce-coder-production.up.railway.app/api/products')
+            fetch('https://api-ecommerce-coder-production.up.railway.app/api/products')
             .then((resp) => resp.json())
             .then((data) => {setProductos(data)})      
     }, [])
