@@ -61,7 +61,7 @@ const Login = (props) =>  {
               <p>No tenes usuario?</p>
               <Link to="/signup">Registrate aquí</Link>
             <hr/>
-              <Link to="http://localhost:3002/google"> Logear con google </Link>
+              <Link to="https://api-ecommerce-coder-production.up.railway.app//google"> Logear con google </Link>
 
             </div>
         </div>

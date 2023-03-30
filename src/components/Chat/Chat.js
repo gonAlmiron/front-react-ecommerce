@@ -16,7 +16,7 @@ function ChatDos() {
   const [messages, setMessages] = useState([])
   const [storedMessages, setStoredMessages] = useState([])
 
-  const url = 'https://api-ecommerce-coder-production.up.railway.app/api/chat'
+  const url = 'https://api-ecommerce-coder-production.up.railway.app/api/chat/'
 
   useEffect(() =>{
     const receivedMessage = (message) =>{
