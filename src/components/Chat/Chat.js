@@ -72,7 +72,7 @@ useEffect(() => {
       //Petición http por POST para guardar el artículo:
       axios.post(url + 'save', {
         message: message,
-        from: username
+        from: username,
       })
     
   }
@@ -135,6 +135,7 @@ useEffect(() => {
                     <div className={`card mb-3 shadow border-1 ${message.from}`}>
                       <div className="card-body">
                         <small className="text-muted"><strong>{message.from}</strong>: {message.message}</small>
+                        <small className="text-muted">{message.timestamps}</small>
                       </div>
                     </div>
                   </div>
